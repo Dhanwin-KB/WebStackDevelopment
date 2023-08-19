@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecommercewebsite>
+<products>
+    <product id="100" category="Electronics">
+        <pname>Iphone 15</pname>
+        <price>$499</price>
+        <quantity>10</quantity>
+    </product>
+    <product id="101" category="Clothing">
+        <pname>Black Chinos Men</pname>
+        <price>$449</price>
+        <quantity>20</quantity>
+    </product>
+    <product id="102" category="Books">
+        <pname>Diary of a Wimpy Kid - Entire Collection</pname>
+        <price>$420</price>
+        <quantity>15</quantity>
+    </product>
+    <product id="103" category="Electronics">
+        <pname>Asus TUF Gaming Laptop</pname>
+        <price>$475</price>
+        <quantity>69</quantity>
+    </product>
+    <product id="104" category="Electronics">
+        <pname>Playstation 6</pname>
+        <price>$450</price>
+        <quantity>50</quantity>
+    </product>
+</products>
+</ecommercewebsite>
