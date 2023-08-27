@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ShopSmart>
+<products>
+    <product id="100" category="Electronics">
+        <name>Iphone 15</name>
+        <price>499</price>
+        <description>Powerful Phone with Great Features.</description>
+        <quantity>10</quantity>
+    </product>
+    <product id="101" category="Clothing">
+        <name>Black Chinos Men</name>
+        <price>449</price>
+        <description>Powerful Chinos with Great Features.</description>
+        <quantity>20</quantity>
+    </product>
+    <product id="102" category="Books">
+        <name>Diary of a Wimpy Kid - Entire Collection</name>
+        <price>420</price>
+        <description>Powerful Book with Great Features.</description>
+        <quantity>15</quantity>
+    </product>
+    <product id="103" category="Electronics">
+        <name>Asus TUF Gaming Laptop</name>
+        <price>475</price>
+        <description>Powerful Laptop with Great Features.</description>
+        <quantity>69</quantity>
+    </product>
+    <product id="104" category="Electronics">
+        <name>Playstation 6</name>
+        <price>450</price>
+        <description>Powerful Gaming Console with Great Features.</description>
+        <quantity>50</quantity>
+    </product>
+    <!-- To trigger missing required element error
+    <product category="Electronics">
+        <name>Playstation 7</name>
+        <price>450</price>
+        <description>Powerful Gaming Console with Great Features.</description>
+        <quantity>50</quantity>
+    </product> -->
+    <!-- To trigger mismatch error -->
+    <!-- <product category="Electronics" id="105">
+        <price>450</price>
+        <name>Playstation 7</name>
+        <description>Powerful Gaming Console with Great Features.</description>
+        <quantity>50</quantity>
+    </product> -->
+</products>
+</ShopSmart>
