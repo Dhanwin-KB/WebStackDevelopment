@@ -1,0 +1,17 @@
+input:invalid 
+{
+    border: 2px dashed red;
+}
+input:valid 
+{
+    border: 2px solid green;
+}
+
+.err{
+    background-color: rgba(255, 0, 0, 0.273);
+    color: red;
+}
+.succ{
+    background-color: rgba(20, 185, 45, 0.782);
+    color: rgb(0, 0, 0);
+}

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="form.css">
+    <script>
+        function validateName() 
+        {
+          let x = document.getElementById('name').value;
+          let pattern= /^[A-Za-z\s]{3,}$/;
+          if (x=="") 
+          {
+            console.log("Name cannot be left empty");
+            document.getElementById("name-error").innerHTML="Name cannot be left empty"
+             setTimeout(() => 
+             {
+                document.getElementById("name-error").innerHTML=""
+             }, 1000);
+            return false;
+          }
+          else if(pattern.test(x))
+          {
+            console.log("Name is valid!");
+            document.getElementById("name-succ").innerHTML="Valid Name"
+                setTimeout(() => 
+                {
+                document.getElementById("name-succ").innerHTML=""
+                }, 1000);
+            return true;
+          }
+          else
+          {
+            document.getElementById("name-error").innerHTML="Name must be at least 3 characters and contain only letters and spaces"
+             setTimeout(() => 
+             {
+                document.getElementById("name-error").innerHTML=""
+             }, 1000);
+             return false;
+          }
+        }
+        function validateEmail()
+        {
+            let x = document.getElementById('email').value;
+            let pattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (pattern.test(x)) 
+            {
+                console.log("Valid Email");
+                document.getElementById("email-succ").innerHTML="Valid Email"
+                setTimeout(() => 
+                {
+                document.getElementById("email-succ").innerHTML=""
+                }, 1000);
+                return true;
+            }
+            else
+            {
+                console.log("Invalid Email ID!");
+                document.getElementById("email-error").innerHTML="Invalid Email ID"
+                setTimeout(() => 
+                {
+                document.getElementById("email-error").innerHTML=""
+                }, 1000);
+                return false;
+            }
+        }
+        function validatePassword()
+        {
+            let x = document.getElementById('password').value;
+            if (x.length < 8) 
+            {
+                console.log("Invalid Password");
+                return false;
+            }
+            else if (x.length >= 8)
+            {
+                console.log("Valid Password");
+                document.getElementById("password-succ").innerHTML="Valid Password"
+                setTimeout(() => 
+                {
+                document.getElementById("password-succ").innerHTML=""
+                }, 1000);
+                return true;
+            }
+            // else
+            // {
+            //     console.log("Invalid Password");
+            //     document.getElementById("password-error").innerHTML="Invalid Password"
+            //     setTimeout(() => 
+            //     {
+            //     document.getElementById("password-error").innerHTML=""
+            //     }, 1000);
+            //     return false;
+            // }
+        }
+        function confirmPassword()
+        {
+            let x = document.getElementById('password').value;
+            let y = document.getElementById('cpassword').value;
+            if (x===y) 
+            {
+                console.log("Passwords match!");
+                document.getElementById("cpassword-succ").innerHTML="Passwords Match!"
+                setTimeout(() => 
+                {
+                document.getElementById("cpassword-succ").innerHTML=""
+                }, 1000);
+                return true;
+            }
+            else
+            {
+                console.log("Passwords don't match!");
+                document.getElementById("password-mismatch").innerHTML="Passwords don't match!"
+                setTimeout(() => 
+                {
+                document.getElementById("password-mismatch").innerHTML=""
+                }, 1000);
+                return false;
+            }
+        }
+        function validateDOB()
+        {
+            let x = document.getElementById('dob').value;;
+            const today = new Date();
+            const dob = new Date(x.value);
+            const age = today.getFullYear() - dob.getFullYear();
+            if (age >= 18)
+            {
+                console.log("Valid Age to use this site");
+                document.getElementById("age-succ").innerHTML="Valid Age to use this site"
+                setTimeout(() => 
+                {
+                document.getElementById("age-succ").innerHTML=""
+                }, 1000);
+                return true;
+            }
+            else 
+            {
+                console.log("Invalid Age: should be 18 or older!");
+                document.getElementById("age-error").innerHTML="Should be 18 or Older!"
+                setTimeout(() => 
+                {
+                document.getElementById("age-error").innerHTML=""
+                }, 1000);
+                return false;
+            }
+        }
+        function validateAll()
+        {
+            const isNameValid = validateName();
+            const isEmailValid = validateEmail();
+            const isPasswordValid = validatePassword();
+            const isPasswordMatchValid = confirmPassword();
+            const isAgeValid = validateDOB();
+            if (isNameValid && isEmailValid && isPasswordValid && isPasswordMatchValid && isAgeValid) 
+            {
+                return true;
+                document.getElementById("submit-succ").innerHTML="All Entries are Valid!"
+                setTimeout(() => 
+                {
+                document.getElementById("submit-succ").innerHTML=""
+                }, 1000);
+            } 
+            else 
+            {
+                document.getElementById("submit-error").innerHTML="Please check all the entries once again"
+                setTimeout(() => 
+                {
+                document.getElementById("submit-error").innerHTML=""
+                }, 1000);
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="form">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" placeholder="Enter Your Name" oninput="validateName()"  required><br>
+        <span class="err" id="name-error"></span><br>
+        <span class="succ" id="name-succ"></span><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" oninput="validateEmail()" action="#" required><br>
+        <span class="err" id="email-error"></span><br>
+        <span class="succ" id="email-succ"></span><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" oninput="validatePassword()" action="#" required><br>
+        <span class="err" id="password-error"></span><br>
+        <span class="succ" id="password-succ"></span><br>
+        <label for="cpassword">Confirm Password:</label><br>
+        <input type="password" id="cpassword" oninput="confirmPassword()" action="#" required><br>
+        <span class="err" id="password-mismatch"></span><br>
+        <span class="succ" id="cpassword-succ"></span><br>
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" action="#" oninput="validateDOB()" required><br><br>
+        <span class="err" id="age-error"></span><br>
+        <span class="succ" id="age-succ"></span><br>
+        <label for="submit"></label>
+        <input type="submit" action="#" onsubmit="validateAll()" required>
+        <span class="err" id="submit-error"></span><br>
+        <span class="succ" id="submit-succ"></span><br>
+    </form>
+</body>
+</html>
