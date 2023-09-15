@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API_FETCH</title>
+    <style>
+        .booklist
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 5px;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold; 
+            color: #ffffff;
+            background-color: rgba(52, 52, 52, 0.025); 
+            padding: 10px;
+        }
+        #fetch-btn 
+        {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s;
+            margin: 0 auto;
+            display: block;
+        }
+        #fetch-btn:hover 
+        {
+            background-color: #0056b3;
+        }
+        body 
+        {
+            background-image: url('bg.gif'); 
+            background-size: cover; 
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body style="margin-top: 5%;">
+    <button id="fetch-btn">Fetch Books</button><br>
+    <script src="script.js"></script>
+    <div class="booklist" id="booklist"></div>
+</body>
+</html>
