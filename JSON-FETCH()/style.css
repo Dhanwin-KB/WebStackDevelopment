@@ -1,0 +1,44 @@
+body
+{
+    background-image: url('bg.gif'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+#sortby
+{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    margin-right: 1cm;
+}
+#table 
+{
+    /* margin-top: 20px;
+    background-color: #ffffff; */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left; 
+}
+#products 
+{
+    width: 100%;
+    border-collapse: collapse;
+}
+#products th 
+{
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 10px;
+}
+#products tr 
+{
+    background-color: #f2f2f2;
+}
+#products td 
+{
+    padding: 10px;
+}
