@@ -1,4 +1,4 @@
-        const url = 'products.json';
+        const url = 'https://cynthiaesthermetilda.github.io/Xhrdemo/products.json';
         let productsData = [];
         let table = document.getElementById('products'); 
         document.getElementById('fetch-btn').addEventListener('click', () => {
